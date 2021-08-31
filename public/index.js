@@ -11,7 +11,7 @@ function submitHandler(e){
     const personName = document.querySelector('#name')
     const personAge = document.querySelector('#age')
     const favColor = document.querySelector('#favcolor')
-    if (personName != '' && personAge != '' && favColor != ''){ 
+    if (personName.value != '' && personAge.value != '' && favColor.value != ''){ 
         let bodyObj = {
             name: personName.value,
             age: personAge.value,
