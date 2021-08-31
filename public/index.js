@@ -1,3 +1,4 @@
+
 const form = document.querySelector('form')
 const addpeople = body => axios.post('http://localhost:4005/api/people', body).then(returnpeople)
 function submitHandler(e){
