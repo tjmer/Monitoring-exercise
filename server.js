@@ -19,6 +19,16 @@ app.get('/', (req,res) => {
     rollbar.info('html file served successfully')
 })
 
+app.get('/people', (req,res)=> {
+    try {
+        nonExistentFunction();
+      } catch (error) {
+        console.error(error);
+        // expected output: ReferenceError: nonExistentFunction is not defined
+        // Note - error messages will vary depending on browser
+      }      
+})
+
 
 
 app.use(rollbar.errorHandler())
