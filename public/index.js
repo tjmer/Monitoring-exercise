@@ -1,4 +1,4 @@
-const Rollbar = require("rollbar")
+
 
 const form = document.querySelector('form')
 const preview = document.querySelector('#peoplePlace')
@@ -24,9 +24,9 @@ function submitHandler(e){
         personAge.value = ''
         favColor.value = ''
     }else if (personName === '' && personAge === '' && favColor === ''){
-        Rollbar.error("Missing name, age and color.")
+        console.log("Missing name, age and color.")
     }else if (personName === '' || personAge === "" || favColor === ""){
-        Rollbar.warning('missing info')
+        console.log('missing info')
     }
     }
     
