@@ -18,9 +18,9 @@ function submitHandler(e){
 
     addpeople(bodyObj)
 
-     personName = ''
-     personAge = ''
-     favColor = ''
+     personName.value = ''
+     personAge.value = ''
+     favColor.value = ''
 }
 
 
