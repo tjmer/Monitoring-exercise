@@ -25,7 +25,7 @@ function submitHandler(e){
         favColor.value = ''
     }else if (personName.value === '' && personAge.value === '' && favColor.value === ''){
         console.log("Missing name, age and color.")
-    }else if (personName.value === '' || personAge.value === "" || favColor.value === ""){
+    }else{
         console.log('missing info')
     }
     }
