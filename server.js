@@ -11,10 +11,14 @@ let rollbar = new Rollbar({
 const app = express()
 const port = process.env.PORT || 4005
 
+app.use(express.json())
+app.use('/style', express.static('./public/styles.css'))
+
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
     rollbar.info('html file served successfully')
 })
+
 
 
 app.use(rollbar.errorHandler())
