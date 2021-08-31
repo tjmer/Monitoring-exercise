@@ -33,6 +33,8 @@ function submitHandler(e){
     function personInfo(group){
     const displayPlate = document.createElement('div')
     displayPlate.innerHTML = `<h4>${group.name}</h4><p>${group.age}</p><p>${group.color}`
+    
+    preview.appendChild(displayPlate)
 }
 
 function previewPerson(arr){
