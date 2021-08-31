@@ -1,5 +1,3 @@
-
-
 const form = document.querySelector('form')
 const preview = document.querySelector('#peoplePlace')
 const peopleReturn = ({data: group}) => previewPerson(group)
@@ -32,7 +30,7 @@ function submitHandler(e){
     
     function personInfo(group){
     const displayPlate = document.createElement('div')
-    displayPlate.innerHTML = `<h4>${group.name}</h4><p>${group.age}</p><p>${group.color}`
+    displayPlate.innerHTML = `<section class = "box"><h4>${group.name}</h4><p>${group.age}</p><p>${group.color}</p></section>`
     
     preview.appendChild(displayPlate)
 }
