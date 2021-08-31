@@ -21,6 +21,10 @@ app.get('/', (req,res) => {
     rollbar.info('html file served successfully')
 })
 
+app.get('/api/people', (req,res)=>{
+    res.status(200).send(group)
+})
+
 app.post('/api/people', (req, res) => {
     rollbar.log("Person added")
     let {name, age, color} = req.body

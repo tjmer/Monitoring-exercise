@@ -2,6 +2,7 @@
 const form = document.querySelector('form')
 const preview = document.querySelector('#peoplePlace')
 const peopleReturn = ({data: group}) => previewPerson(group)
+const getPeople = ()=> axios.get('/api/people').then(peopleReturn)
 
 const addpeople = body => axios.post('/api/people', body).then(peopleReturn)
 function submitHandler(e){
@@ -37,3 +38,4 @@ function previewPerson(arr){
 }
 
 form.addEventListener('submit', submitHandler)
+getPeople()
