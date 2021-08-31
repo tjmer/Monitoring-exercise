@@ -13,19 +13,14 @@ const port = process.env.PORT || 4005
 
 app.use(express.json())
 app.use('/style', express.static('./public/styles.css'))
+app.use('/js', express.static('./public/intex.js'))
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
     rollbar.info('html file served successfully')
 })
 
-app.get('/people', (req,res)=> {
-    try {
-        nonExistentFunction();
-      } catch (error) {
-        rollbar
-      }      
-})
+app.get('/people')
 
 
 
