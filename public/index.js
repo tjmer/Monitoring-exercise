@@ -1,8 +1,9 @@
 
 const form = document.querySelector('form')
-const addpeople = body => axios.post('/api/people', body).then((res)=>{
-    console.log(res)
-})
+const preview = document.querySelector('#peoplePlace')
+const peopleReturn = ({data: group}) => previewperson(group)
+
+const addpeople = body => axios.post('/api/people', body).then(peopleReturn)
 function submitHandler(e){
     e.preventDefault()
 
@@ -23,5 +24,16 @@ function submitHandler(e){
      favColor.value = ''
 }
 
+function personInfo(group){
+    const displayPlate = document.createElement('div')
+    displayPlate.innerHTML = `<h4>${res.data.name}</h4><p>${res.data.age}</p><p>${res.data.color}`
+}
+
+function peopleReturn(arr){
+    preview.innerHTML = ''
+    for (let i = 0; i < arr.length; i++){
+        personInfo(arr[i])
+    }
+}
 
 form.addEventListener('submit', submitHandler)
