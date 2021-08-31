@@ -10,9 +10,7 @@ let rollbar = new Rollbar({
 
 const app = express()
 const port = process.env.PORT || 4005
-const group = [
-
-]
+const group = []
 
 app.use(express.json())
 app.use('/style', express.static('./public/styles.css'))
@@ -24,7 +22,15 @@ app.get('/', (req,res) => {
 })
 
 app.post('/api/people', (req, res) => {
-    rollbar.log("people")
+    rollbar.log("Person added")
+    let {name, age, color} = req.body
+    let newperson = {
+        name,
+        age,
+        color
+    }
+    group.push(newperson)
+    res.status(200).send(group)
 })
 
 
