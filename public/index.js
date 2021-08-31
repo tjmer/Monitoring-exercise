@@ -1,6 +1,6 @@
 
 const form = document.querySelector('form')
-const addpeople = body => axios.post('http://localhost:4005/api/people', body).then((res)=>{
+const addpeople = body => axios.post('http:/api/people', body).then((res)=>{
     console.log(res)
 })
 function submitHandler(e){
