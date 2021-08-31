@@ -26,7 +26,7 @@ function submitHandler(e){
 
 function personInfo(group){
     const displayPlate = document.createElement('div')
-    displayPlate.innerHTML = `<h4>${res.data.name}</h4><p>${res.data.age}</p><p>${res.data.color}`
+    displayPlate.innerHTML = `<h4>${group.name}</h4><p>${group.age}</p><p>${group.color}`
 }
 
 function previewPerson(arr){
