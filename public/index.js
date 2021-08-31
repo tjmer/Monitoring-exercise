@@ -1,7 +1,7 @@
 
 const form = document.querySelector('form')
 const preview = document.querySelector('#peoplePlace')
-const peopleReturn = ({data: group}) => previewperson(group)
+const peopleReturn = ({data: group}) => previewPerson(group)
 
 const addpeople = body => axios.post('/api/people', body).then(peopleReturn)
 function submitHandler(e){
@@ -29,7 +29,7 @@ function personInfo(group){
     displayPlate.innerHTML = `<h4>${res.data.name}</h4><p>${res.data.age}</p><p>${res.data.color}`
 }
 
-function peopleReturn(arr){
+function previewPerson(arr){
     preview.innerHTML = ''
     for (let i = 0; i < arr.length; i++){
         personInfo(arr[i])
