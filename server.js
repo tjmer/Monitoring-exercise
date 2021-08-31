@@ -10,17 +10,22 @@ let rollbar = new Rollbar({
 
 const app = express()
 const port = process.env.PORT || 4005
+const group = [
+
+]
 
 app.use(express.json())
 app.use('/style', express.static('./public/styles.css'))
-app.use('/js', express.static('./public/intex.js'))
+app.use('/js', express.static('./public/index.js'))
 
 app.get('/', (req,res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
     rollbar.info('html file served successfully')
 })
 
-app.get('/people')
+app.post('/api/people', (req, res) => {
+    rollbar.log("people")
+})
 
 
 
