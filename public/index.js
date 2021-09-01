@@ -1,5 +1,3 @@
-const Rollbar = require("rollbar")
-
 const form = document.querySelector('form')
 const preview = document.querySelector('#peoplePlace')
 const peopleReturn = ({data: group}) => previewPerson(group)
