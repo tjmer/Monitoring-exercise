@@ -25,10 +25,10 @@ function submitHandler(e){
         favColor.value = ''
     }else if (personName.value === '' && personAge.value === '' && favColor.value === ''){
         console.log("Missing name, age and color.")
-        Rollbar.warn("Missing name, age and color");
+        Rollbar.critical("No info input");
     }else{
         console.log('missing info')
-        Rollbar.warn('Missing info')
+        Rollbar.warning("One or more fields not filled")
     }
     }
     
